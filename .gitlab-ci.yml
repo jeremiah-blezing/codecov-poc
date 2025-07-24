@@ -1,0 +1,16 @@
+stages:
+  - test
+
+install_and_test:
+  stage: test
+  image: node:22 # Use Node.js version 22 image
+  variables:
+    CODECOV_TOKEN: $CODECOV_TOKEN
+  before_script:
+    - curl -Os https://cli.codecov.io/latest/linux/codecov
+    - chmod +x codecov
+  script:
+    - npm install # Install dependencies
+    - npx vitest run --coverage # Run tests with Vitest and generate coverage
+  after_script:
+    - ./codecov --token $CODECOV_TOKEN --url https://codecov.mycs.zone
