@@ -13,4 +13,4 @@ install_and_test:
     - npm install # Install dependencies
     - npx vitest run --coverage # Run tests with Vitest and generate coverage
   after_script:
-    - ./codecov upload-process --token $CODECOV_TOKEN --url https://codecov.mycs.zone
+    - ./codecov --token $CODECOV_TOKEN --url https://codecov.mycs.zone
