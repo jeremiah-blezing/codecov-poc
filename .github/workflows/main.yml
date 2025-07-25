@@ -17,3 +17,4 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           slug: jeremiah-blezing/codecov-poc
+      - run: npm run build
