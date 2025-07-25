@@ -7,8 +7,9 @@ install_and_test:
   variables:
     CODECOV_TOKEN: $CODECOV_TOKEN
   before_script:
-    - curl -Os https://cli.codecov.io/latest/linux/codecov
-    - chmod +x codecov
+    # - curl -Os https://cli.codecov.io/latest/linux/codecov
+    # - chmod +x codecov
+    - pip install codecov-cli
   script:
     - npm install # Install dependencies
     - npx vitest run --coverage # Run tests with Vitest and generate coverage
