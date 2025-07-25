@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [
     react(),
     codecovVitePlugin({
-      enableBundleAnalysis: process.env.CODECOV_TOKEN !== undefined,
+      enableBundleAnalysis: process.env.CI === "true",
       bundleName: "next-amazon",
       uploadToken: process.env.CODECOV_TOKEN,
       telemetry: false,
